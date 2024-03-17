@@ -1,32 +1,32 @@
+import { spinnerController } from "../spinner/spinner-controller.js";
 import { getAds } from "./ads-list-model.js";
 import { designAds, emptyAds } from "./ads-list-views.js";
 
 
 export async function adsListController (adsList) {
-  // DONE 1- recibir lista ads del servidor
-  // DONE 2- parsear los datos
-  // 3- prepararlos para la vista 
-  // 4- mostrarlos en la página
+  const spinner = adsList.querySelector('#spinner');
+  const { showSpinner, hideSpinner } = spinnerController(spinner)
 
   try {
+    showSpinner();
     const ads = await getAds()
-    console.log(ads);
     if (ads.length > 0) {
       showAds(ads, adsList);
     } else {
       showEmptyAds(adsList);
     }
-
   } catch (error) {
     alert(error);
+  } finally {
+    hideSpinner();
   }
+
 }
 
 function showAds(ads, adsList) {
   ads.forEach(ad => {
     const adContainer = document.createElement('div');
     adContainer.innerHTML = designAds(ad); 
-    console.log(adContainer);
     adsList.appendChild(adContainer);
   });
 }
