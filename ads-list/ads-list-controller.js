@@ -1,6 +1,7 @@
 import { spinnerController } from "../spinner/spinner-controller.js";
 import { getAds } from "./ads-list-model.js";
 import { designAds, emptyAds } from "./ads-list-views.js";
+import { createEvent } from "../utils/create-event.js";
 
 
 export async function adsListController (adsList) {
@@ -16,7 +17,11 @@ export async function adsListController (adsList) {
       showEmptyAds(adsList);
     }
   } catch (error) {
-    alert(error);
+    createEvent(adsList, 'getAdsErrors', {
+      detail: {
+        message: error.message, 
+        type: 'error'}
+      });
   } finally {
     hideSpinner();
   }

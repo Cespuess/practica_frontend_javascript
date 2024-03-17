@@ -1,13 +1,21 @@
 import { adsListController } from "./ads-list/ads-list-controller.js";
+import { notificationController } from "./notifications/notifications-controller.js";
 import { sessionController } from "./session/session-controller.js";
 
 document.addEventListener('DOMContentLoaded', () => {
   const adsList = document.querySelector('.ads-list');
   const sessionbar = document.querySelector('#session');
-  const notificationsList = document.querySelector('.notifications-container');
+  const notificationsContainer = document.querySelector('.notifications-container');
   
   sessionController(sessionbar);
-  adsListController(adsList); 
+  
+  const { showNotifications } = notificationController(notificationsContainer);
+  
+  adsList.addEventListener('getAdsErrors', (e) => {
+    showNotifications(e.detail.message, e.detail.type);
+    e.stopPropagation();
+  })
+  adsListController(adsList);
 })
 
 window.addEventListener('offline', () => {

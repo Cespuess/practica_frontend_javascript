@@ -1,7 +1,6 @@
 import { createRegistredOptions, createUnregistredOptions } from "./session-view.js";
 
 export function sessionController(sessionbar) {
-  localStorage.setItem('token', 'hola');
   const token = localStorage.getItem('token');
 
   if (token) {
