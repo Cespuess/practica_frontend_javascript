@@ -1,0 +1,21 @@
+.sessionbar-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family:'Times New Roman', Times, serif;
+  font-size: 16px;
+  height: 38px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #ffffff;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+  box-sizing: content-box;
+}
+
+.sessionbar-btn:hover {
+  background-color: #0056b3;
+}
