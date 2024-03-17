@@ -19,5 +19,6 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 window.addEventListener('offline', () => {
-  alert('has perdido la conexión');
+alert('Has perdido la conexión');
 })
+

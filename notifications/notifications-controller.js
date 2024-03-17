@@ -6,6 +6,10 @@ export function notificationController(notificationContainer) {
     notification.innerHTML = createNotification(message);
     notification.classList.add('notification', type);
     notificationContainer.appendChild(notification);
+    
+    setTimeout(() => {
+      notification.remove()
+    }, 5000);
   }
 
   return {showNotifications};
