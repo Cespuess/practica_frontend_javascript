@@ -1,5 +1,6 @@
 import { spinnerController } from "../spinner/spinner-controller.js";
 import { createEvent } from "../utils/create-event.js";
+import { emailValidator } from "../utils/functions.js";
 import { createUser } from "./signup-model.js";
 
 export function signupController(registerForm) {
@@ -19,12 +20,6 @@ export function signupController(registerForm) {
       registerUser(registerForm);
     }
 
-    function emailValidator(registerForm) {
-      const email = registerForm.querySelector('#email');
-      const emailRegex = new RegExp(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/);
-
-      return emailRegex.test(email.value);
-    }
 
     function passwordConfirmation(registerForm) {
       const password = registerForm.querySelector('#password');
