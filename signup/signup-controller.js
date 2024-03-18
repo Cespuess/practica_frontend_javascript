@@ -1,6 +1,5 @@
 import { spinnerController } from "../spinner/spinner-controller.js";
-import { createEvent } from "../utils/create-event.js";
-import { emailValidator } from "../utils/functions.js";
+import { emailValidator, createEvent } from "../utils/functions.js";
 import { createUser } from "./signup-model.js";
 
 export function signupController(registerForm) {

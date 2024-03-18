@@ -1,6 +1,5 @@
 import { spinnerController } from "../spinner/spinner-controller.js";
-import { createEvent } from "../utils/create-event.js";
-import { emailValidator } from "../utils/functions.js";
+import { emailValidator, createEvent } from "../utils/functions.js";
 import { login } from "./login-model.js";
 
 export function loginController(loginForm) {
@@ -36,7 +35,7 @@ export function loginController(loginForm) {
 
       setTimeout(() => {
         window.location.href = 'index.html';
-      }, 3000);
+      }, 2000);
     } catch (error) {
       createEvent(loginForm, 'login-notifications', {
         detail: {

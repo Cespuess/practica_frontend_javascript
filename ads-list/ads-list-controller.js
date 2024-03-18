@@ -1,7 +1,7 @@
 import { spinnerController } from "../spinner/spinner-controller.js";
 import { getAds } from "./ads-list-model.js";
 import { designAds, emptyAds } from "./ads-list-views.js";
-import { createEvent } from "../utils/create-event.js";
+import { createEvent } from "../utils/functions.js";
 
 
 export async function adsListController (adsList) {
