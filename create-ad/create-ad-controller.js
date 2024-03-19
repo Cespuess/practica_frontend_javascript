@@ -15,9 +15,15 @@ export function createAdController(createAdForm) {
   
   async function createAd(createAdForm) {
     const { name, price, onSale, description, image } = getFormData(createAdForm);
+    
+    console.log(createAdForm.price);
 
     try {
       showSpinner();
+      if (!verificatePriceNumber(price)) {
+        createAdForm.price.value = '';
+        throw 'Introduce un número válido en el precio.';
+      }
       await sendAdDataToServer(name, price, onSale, description, image);
       createEvent(createAdForm, 'createAd-notifications', {
         detail: {
@@ -51,5 +57,10 @@ export function createAdController(createAdForm) {
     let image = formData.get('image');
     if (image === '') image = 'images/defaultImage.jpg'
     return { name, price, onSale, description, image }
+  }
+
+  function verificatePriceNumber(price) {
+    const regex = new RegExp(/^[0-9]{0,12}([.][0-9]{2,2})?$/);
+    return regex.test(price);
   }
 }

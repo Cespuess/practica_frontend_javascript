@@ -1,3 +1,5 @@
+import { priceFormat } from "../utils/functions.js";
+
 export async function getAdData(adId) {
   const url = `http://localhost:8000/api/ads/${adId}`
 
@@ -19,7 +21,7 @@ function parseData(data) {
     userId: data.userId,
     image: data.image,
     onSale: data.onSale,
-    price: data.price,
+    price: priceFormat(data.price),
     name: data.name,
     description: data.description
   }

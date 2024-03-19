@@ -9,3 +9,10 @@ export function createEvent(element, name, options) {
   const event = new CustomEvent(name, options);
   element.dispatchEvent(event);
 }
+
+export function priceFormat(price) {
+  return parseFloat(price).toLocaleString('es-ES', {
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 2
+  }) 
+}
