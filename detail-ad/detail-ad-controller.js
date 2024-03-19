@@ -1,11 +1,12 @@
 import { spinnerController } from "../spinner/spinner-controller.js"
 import { createEvent } from "../utils/functions.js";
-import { getAdData } from "./detail-ad-model.js";
-import { renderAd } from "./detail-ad-view.js";
+import { deleteAd, getAdData, getUserData } from "./detail-ad-model.js";
+import { renderAd, renderDeleteButton } from "./detail-ad-view.js";
 
 export async function detailAdController(detailContainer) {
   const params = new URLSearchParams(window.location.search);
   const adId = params.get('adId');
+
   if (!adId) {
     window.location.href = 'index.html';
     alert('Hay que especificar el id del anuncio que quieres que se muestre.')
@@ -20,7 +21,14 @@ export async function detailAdController(detailContainer) {
     showSpinner();
     const adData = await getAdData(adId);
     showAd(adDetailContainer, adData);
-    
+    const userData = await getUserData();
+
+    if (adData.userId === userData.userId) {
+      deleteButtonHandler(detailContainer, adData.id);
+
+    }
+
+
   } catch (error) {
     createEvent(detailContainer, 'detailAd-notifications', {
       detail: {
@@ -37,18 +45,37 @@ export async function detailAdController(detailContainer) {
     adDiv.classList.add('ad-container');
     adDiv.innerHTML = renderAd(adData);
     adDetailContainer.appendChild(adDiv);
-
   }
 
+  function deleteButtonHandler(detailContainer, id) {
+    const buttonContainer = detailContainer.querySelector('.delete-button')
+    buttonContainer.innerHTML = renderDeleteButton();
+    buttonContainer.addEventListener('click', () => removeAd(id))
+  }
+
+  async function removeAd(id) {
+    if (window.confirm('Estás seguro de querer borrar el anuncio?')) {
+      try {
+        await deleteAd(id);
+        createEvent(detailContainer, 'detailAd-notifications', {
+          detail: {
+            message: 'Anuncio eliminado correctamente.',
+            type: 'success'
+          }
+        })
+        setTimeout(() => {
+          window.location.href = 'index.html';
+        }, 2000);
+
+      } catch (error) {
+        createEvent(detailContainer, 'detailAd-notifications', {
+          detail: {
+            message: error,
+            type: 'error'
+          }
+        })
+      }
+
+    }
+  }
 }
-
-
-
-
-// -------- conseguir adId
-// --------conseguir data del ad
-// ---------parsear los datos
-// ------------preparar la vista
-// ------------introducir la vista en el html
-// ---------si error mandar notificaciones
-// si el usuario registrado es el propietario del anuncio, mostrar el botón.

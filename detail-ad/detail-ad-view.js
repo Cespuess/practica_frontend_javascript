@@ -7,3 +7,7 @@ return `
   <p class="ad__description">${adData.description}</p>
 `
 }
+
+export function renderDeleteButton() {
+  return '<button id = "deletebutton"> Borrar Anuncio </button>'
+}

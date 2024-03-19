@@ -20,6 +20,7 @@ function parseAds(data) {
     onSale: data.onSale,
     price: data.price,
     description: data.description,
-    image: data.image
+    image: data.image,
+    userId: data.userId
   }))
 }
