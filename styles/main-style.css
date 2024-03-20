@@ -1,0 +1,118 @@
+@font-face {
+  font-family: 'NunitoSans';
+  src: url(../fonts/NunitoSans_10pt-Regular.ttf);
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400
+}
+@font-face {
+  font-family: 'NunitoSans';
+  src: url(../fonts/NunitoSans_10pt-Bold.ttf);
+  font-display: swap;
+  font-style: normal;
+  font-weight: bold;
+}
+
+:root {
+  --main-orange-color: rgb(236,84,19);
+  --button-hover-bg-color: rgba(236,84,19,0.6);
+  --container-bg-color: rgba(56, 47, 47, 0.664);
+  font-family: 'NunitoSans', 'Geneva', sans-serif;
+  font-size: 16px;
+  --border-radius: 10px;
+  ;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  width: 85%;
+  max-width: 1000px;
+  margin: 2rem auto;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  text-shadow: 1px 1px 1px black;
+}
+
+.hidden {
+  display: none;
+}
+
+/* HEADER */
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--container-bg-color);
+  color: var(--main-orange-color);
+  text-shadow: 1px 1px 1px black;
+  margin: 2rem auto;
+  border-radius: var(--border-radius)
+}
+
+/* ADS LIST */ 
+.ads-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-auto-rows: 300px;
+  gap: 1rem;
+  background-color: var(--container-bg-color);
+  padding: 2rem;
+  border-radius: var(--border-radius)
+}
+
+.ad-container {
+  border:solid 2px var(--main-orange-color);
+  padding: 1rem;
+  border-radius: var(--border-radius);
+}
+
+.ad-container p{
+  color: white;
+}
+
+.ad__content+.ad__content {
+  margin-top: 1rem;
+} 
+
+.ad__description {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.ad__image {
+  width: 100%;
+  height: 50%;
+  object-fit: cover;
+  object-position: center center;
+  border-radius: var(--border-radius);
+}
+
+/* FOOTER */
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem auto;
+  background-color: var(--container-bg-color);
+  border-radius: var(--border-radius);
+  height: 80px;
+  font-weight: bold;
+  color: var(--main-orange-color); 
+  text-shadow: 1px 1px 1px black;
+}

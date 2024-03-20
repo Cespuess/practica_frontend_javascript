@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./images/theGoodCorner.png" type="image/x-icon">
-    <link rel="stylesheet" href="index-style.css">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/main-style.css">
     <link rel="stylesheet" href="spinner/spinner.css">
     <link rel="stylesheet" href="session/session.css">
     <link rel="stylesheet" href="notifications/notifications.css">
@@ -12,14 +13,23 @@
   </head>
 
   <body>
-    <h1>The Good Corner</h1>
+    <header>
+      <h1>The Good Corner</h1>
+    </header>
 
-    <nav id="session"></nav>
-    <section class="notifications-container"></section>
+    <main class="container">
+      <nav id="session"></nav>
+      <section class="notifications-container"></section>
+  
+      <section class="ads-list">
+        <div id="spinner" class="hidden"></div>
+      </section>
 
-    <section class="ads-list">
-      <div id="spinner"></div>
-    </section>
+    </main>
+
+    <footer>
+      <p>&#169;The Good Corner - Todos los derechos reservados</p>
+    </footer>
     <script type="module" src="./index.js"></script>
   </body>
 

@@ -25,9 +25,7 @@ export async function detailAdController(detailContainer) {
 
     if (adData.userId === userData.userId) {
       deleteButtonHandler(detailContainer, adData.id);
-
     }
-
 
   } catch (error) {
     createEvent(detailContainer, 'detailAd-notifications', {
@@ -36,6 +34,9 @@ export async function detailAdController(detailContainer) {
         type: 'error'
       }
     })
+    setTimeout(() => {
+      window.location.href = 'index.html';
+    }, 2000)
   } finally {
     hideSpinner();
   }

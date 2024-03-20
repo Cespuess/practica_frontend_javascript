@@ -31,6 +31,7 @@ export async function adsListController (adsList) {
 function showAds(ads, adsList) {
   ads.forEach(ad => {
     const adContainer = document.createElement('div');
+    adContainer.classList.add('ad-container');
     adContainer.innerHTML = designAds(ad); 
     adsList.appendChild(adContainer);
   });
