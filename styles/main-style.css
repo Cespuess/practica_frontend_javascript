@@ -52,16 +52,51 @@ p {
   display: none;
 }
 
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 38px;
+  width: 110px;
+  padding: 10px 20px;
+  background-color: var(--main-orange-color);
+  color: #ffffff;
+  text-decoration: none;
+  text-shadow: 1px 1px 1px black;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  margin-right: 10px;
+  box-sizing: content-box;
+}
+
+.btn:hover {
+  background-color: var(--button-hover-bg-color);
+  font-weight: bold;
+}
+
 /* HEADER */
 header {
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: var(--container-bg-color);
-  color: var(--main-orange-color);
-  text-shadow: 1px 1px 1px black;
   margin: 2rem auto;
   border-radius: var(--border-radius)
+}
+
+header h1,
+h2 {
+  color: var(--main-orange-color);
+  text-shadow: 1px 1px 1px black;
+}
+
+/* NOTIFICATIONS */
+.notifications-container {
+  position: absolute;
+  top: 19%;
+  left: 50%;
+  transform: translate(-50%);
 }
 
 /* ADS LIST */ 
@@ -79,6 +114,7 @@ header {
   border:solid 2px var(--main-orange-color);
   padding: 1rem;
   border-radius: var(--border-radius);
+  background-color: var(--container-bg-color);
 }
 
 .ad-container p{

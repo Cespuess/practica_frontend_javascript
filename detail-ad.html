@@ -4,20 +4,34 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="images/theGoodCorner.png" type="image/x-icon">
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="styles/main-style.css">
+  <link rel="stylesheet" href="./detail-ad/detail-ad.css">
   <link rel="stylesheet" href="spinner/spinner.css">
   <link rel="stylesheet" href="notifications/notifications.css">
   <title>The Good Corner - Detalle Anuncio</title>
 </head>
 <body>
-  <section class="detail-container">
+  <header>
+    <a href="index.html">
+      <h1>The Good Corner</h1>
+    </a>
+  </header>
+
+  <section class="container detail-container">
     <h2>Detalle Anuncio</h2>
     <div class="notifications-container"></div>
+
     <section class="detail-ad">
       <div id="spinner"></div>
     </section>
+
     <div class="delete-button"></div>
   </section>
 
+  <footer>
+    <p>&#169;The Good Corner - Todos los derechos reservados</p>
+  </footer>
   <script type="module" src="detail-ad.js"></script>
 </body>
 </html>

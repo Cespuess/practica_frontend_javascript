@@ -1,6 +1,6 @@
 .notification {
   border: solid 2px black;
-  border-radius: 10px;
+  border-radius: var(--border-radius);
 }
 
 .notification.error {
