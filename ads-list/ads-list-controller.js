@@ -38,5 +38,8 @@ function showAds(ads, adsList) {
 }
 
 function showEmptyAds(adsList){
-  adsList.innerHTML = emptyAds();
+  const emptyAdContainer = document.createElement('div');
+  emptyAdContainer.classList.add('empty-ads-container');
+  emptyAdContainer.innerHTML = emptyAds(); 
+  adsList.appendChild(emptyAdContainer);
 }
