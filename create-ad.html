@@ -4,12 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="./images/theGoodCorner.png" type="image/x-icon">
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="styles/main-style.css">
   <link rel="stylesheet" href="/notifications/notifications.css">
   <link rel="stylesheet" href="/spinner/spinner.css">
   <title>The Good Corner - Crear Anuncio</title>
 
 </head>
 <body>
+  <header>
+    <a href="index.html">
+      <h1>The Good Corner</h1>
+    </a>
+  </header>
+
   <div class="create-ad">
     <h2>Crear anuncio</h2>
     <section class="notifications-container"></section>
@@ -45,9 +53,12 @@
         <input type="text" id="image" name="image" placeholder="URL imagen (opcional)">
       </div>
 
-      <button type="submit">Crear Anuncio</button>
+      <button type="submit" class="btn form__btn">Crear Anuncio</button>
     </form>
   </div>
+  <footer>
+    <p>&#169;The Good Corner - Todos los derechos reservados</p>
+  </footer>
 
   <script type="module" src="create-ad.js"></script>
 </body>

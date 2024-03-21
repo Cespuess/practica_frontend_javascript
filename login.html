@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="./images/theGoodCorner.png" type="image/x-icon">
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="styles/main-style.css">
   <link rel="stylesheet" href="./notifications/notifications.css">
   <link rel="stylesheet" href="./spinner/spinner.css">
   <link rel="stylesheet" href="./login/login.css">
@@ -11,6 +13,12 @@
 
 </head>
 <body>
+  <header>
+    <a href="index.html">
+      <h1>The Good Corner</h1>
+    </a>
+  </header>
+
   <div class="login">
     <h2>Inicia Sesión</h2>
     <section class="notifications-container"></section>
@@ -25,11 +33,13 @@
         <input type="password" id="password" name="password" minlength="8" required>
       </div>
       
-      <button type="submit">Iniciar Sesión</button>
+      <button type="submit" class="btn form__btn">Iniciar Sesión</button>
     </form>
-
   </div>
 
+  <footer>
+    <p>&#169;The Good Corner - Todos los derechos reservados</p>
+  </footer>
   <script type="module" src="./login.js"></script>
 </body>
 </html>
