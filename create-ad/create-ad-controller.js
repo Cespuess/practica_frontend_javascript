@@ -52,11 +52,15 @@ export function createAdController(createAdForm) {
     const formData = new FormData(createAdForm);
     const name = formData.get('name');
     const price = formData.get('price');
-    const onSale = formData.get('onSale');
+    const onSale = stringToBoolean(formData.get('onSale'));
     const description = formData.get('description');
     let image = formData.get('image');
     if (image === '') image = 'images/defaultImage.jpg'
     return { name, price, onSale, description, image }
+  }
+
+  function stringToBoolean(stringBoolean) {
+    return stringBoolean === 'true' ? true : false;
   }
 
   function verificatePriceNumber(price) {
