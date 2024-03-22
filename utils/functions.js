@@ -12,7 +12,6 @@ export function createEvent(element, name, options) {
 
 export function priceFormat(price) {
   return parseFloat(price).toLocaleString('es-ES', {
-    minimumFractionDigits: 0,
-    maximumFractionDigits: 2
+    style: 'currency', currency: 'EUR'
   }) 
 }
