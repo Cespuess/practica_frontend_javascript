@@ -13,3 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   detailAdController(detailContainer);
 })
+
+window.addEventListener('offline', () => {
+  alert('Has perdido la conexión');
+  })

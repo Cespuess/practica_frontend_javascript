@@ -15,7 +15,7 @@ export async function login(email, password) {
     
     return data.accessToken;
   } catch (error) {
-    if (error.message) throw new Error(error.message);
-    else throw new Error(error);
+    if (error.message) throw error.message;
+    else throw error;
   }
 }

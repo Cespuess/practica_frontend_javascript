@@ -15,8 +15,6 @@ export function createAdController(createAdForm) {
   
   async function createAd(createAdForm) {
     const { name, price, onSale, description, image } = getFormData(createAdForm);
-    
-    console.log(createAdForm.price);
 
     try {
       showSpinner();

@@ -18,7 +18,6 @@ export async function sendAdDataToServer(name, price, onSale, description, image
       throw new Error(data.message);
     }
   } catch (error) {
-    if (error.message) throw new Error(error.message)
-    else throw new Error('Error con la petición al servidor.');
+    throw 'Error con la petición al servidor.';
   }
 }

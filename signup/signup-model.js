@@ -11,5 +11,5 @@ export async function createUser(email, password) {
   }
   )
   
-  if (!response.ok) throw new Error('Error al crear usuario');
+  if (!response.ok) throw 'Error al crear usuario';
 }

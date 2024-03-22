@@ -14,6 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
   loginController(loginForm);
 })
 
-
+window.addEventListener('offline', () => {
+  alert('Has perdido la conexión');
+  })
 
 

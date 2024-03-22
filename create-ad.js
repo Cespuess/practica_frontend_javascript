@@ -20,3 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   createAdController(createAdForm);
 }) 
+
+window.addEventListener('offline', () => {
+  alert('Has perdido la conexión');
+  })
